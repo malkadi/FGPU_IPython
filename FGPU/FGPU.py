@@ -1,6 +1,6 @@
 from pynq import MMIO
 from pynq import Bitstream
-from pynq.drivers import xlnk
+from . import xlnk
 from . import general_const
 import time
 import os
