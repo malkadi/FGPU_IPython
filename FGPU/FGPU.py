@@ -402,16 +402,16 @@ class FGPU:
         print(str(out[1], "utf-8")) # convert to string and print
         if p.returncode != 0:
             # if clang failed; print the log file and return
-            with open("clang.log", 'r') as fin: 
+            with open(general_const.CLANG_LOG, 'r') as fin: 
                 print (fin.read())
             return None
         #if clang compilation was not successful; the file code.ll will not exist
-        if os.path.isfile("code.bin"):
+        if os.path.isfile(general_const.CODE_BIN):
             # Show the assembly of the compiled kernel
-            p= Popen(["./llvm-objdump", "-d", "code.bin"], stdout=PIPE)
+            p= Popen([general_const.LLVM_OBJDUMP, "-d", general_const.CODE_BIN], stdout=PIPE)
             out = p.communicate() # returns a tuble of byte arrays from stdout and stderr
             print(str(out[0], "utf-8")) # convert to string and print
-            with open('code.array') as f:
+            with open(general_const.CODE_ARRAY) as f:
                 self.kernel_code = []
                 for line in f: # read rest of lines
                     record = [int(x,16) for x in line.split()]
