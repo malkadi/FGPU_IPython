@@ -7,6 +7,7 @@ import os
 import math
 import cffi
 from subprocess import Popen, PIPE
+import numpy as np
 
 class FGPU:
     def __init__(self):
@@ -140,7 +141,7 @@ class FGPU:
         elif self.kdesc['nDim'] == 2:
             self.kdesc['size'] = self.kdesc['size0'] * self.kdesc['size1']
             self.kdesc['wg_size'] = self.kdesc['wg_size0'] * self.kdesc['wg_size1']
-            slef.kdesc['wg_size2'] = 1
+            self.kdesc['wg_size2'] = 1
             self.kdesc['size2'] = 1
         
         self.kdesc['size'] = self.kdesc['size0'] * self.kdesc['size1'] * self.kdesc['size2']

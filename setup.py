@@ -7,7 +7,7 @@ import FGPU
 setup(
     name = "FGPU",
     version = FGPU.__version__,
-    url = 'https://github.com/malkadi/FGPU_iPython',
+    url = 'https://github.com/malkadi/FGPU_IPython',
     license = 'All rights reserved.',
     packages = ['FGPU'],
     package_data = {
