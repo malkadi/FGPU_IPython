@@ -370,7 +370,7 @@ class FGPU:
         else:
             raise AssertionError()
             
-    def compile_kernel(self):
+    def compile_kernel(self, show_objdump=False):
         """Compile the kernel OpenCL code and read the generated binary
         
         The compilation process consists of three steps executed by the script "compile.sh"
@@ -383,11 +383,11 @@ class FGPU:
         Note
         ----
         * Any mistakes in the OpenCL code will be shown if the clang-compilation was not successful
-        * A dump of the .text section of the generated object file will be shown to the user
         
         Parameters
         ----------
-        None
+        showObjdump: boolean
+            Print an objdump for the .text section of the generated object file if set to true
         
         Returns
         -------
@@ -409,9 +409,10 @@ class FGPU:
         #if clang compilation was not successful; the file code.ll will not exist
         if os.path.isfile(general_const.CODE_BIN):
             # Show the assembly of the compiled kernel
-            p= Popen([general_const.LLVM_OBJDUMP, "-d", general_const.CODE_BIN], stdout=PIPE)
-            out = p.communicate() # returns a tuble of byte arrays from stdout and stderr
-            print(str(out[0], "utf-8")) # convert to string and print
+            if show_objdump:
+                p= Popen([general_const.LLVM_OBJDUMP, "-d", general_const.CODE_BIN], stdout=PIPE)
+                out = p.communicate() # returns a tuble of byte arrays from stdout and stderr
+                print(str(out[0], "utf-8")) # convert to string and print
             with open(general_const.CODE_ARRAY) as f:
                 self.kernel_code = []
                 for line in f: # read rest of lines
