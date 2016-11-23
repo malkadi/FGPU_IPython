@@ -1,6 +1,7 @@
 
 #include "FGPUlib.c"
 
+// the following function sorts 3 values in ascending order
 #define sort3(a, b, c){                 \
   unsigned pos_a, pos_b, pos_c;         \
   unsigned tmp_a, tmp_b;                \
