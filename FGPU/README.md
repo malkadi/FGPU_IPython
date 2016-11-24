@@ -2,7 +2,7 @@ This directory contains all sources for the FPGU python package.
 
 It can be installed from terminal by navigating to this directory and executing:
 ```sh
-sudo -H pip install --upgrade .
+sudo -H pip install --upgrade 'git+https://github.com/malkadi/FGPU_IPython'
 ```
 
 - The files *FGPU.py, \_\_init\_\_.py and general_const.py* are needed to setup the package.
