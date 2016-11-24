@@ -1,5 +1,6 @@
 ## FGPU Demo using PYNQ on the Xilinx ZC706
-
+[FGPU] is a soft GPU-like architecture for FPGAs. It can be programmed using OpenCL and customized according to application needs.
+(http://dl.acm.org/citation.cfm?id=2847273)
 ### Website
 http://www.esit.rub.de
 
@@ -8,4 +9,4 @@ http://www.esit.rub.de
  * manual install from terminal via: sudo -H pip install --upgrade 'git+https://github.com/malkadi/FGPU\_Python'
 
 ### Usage
-See example notebook in the 'notebooks' folder.
+See example notebooks in the 'notebooks' folder.
