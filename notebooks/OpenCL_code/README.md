@@ -1,5 +1,5 @@
-This directory includes the OpenCL code used in all design examples.
+This directory includes the OpenCL code needed to run design examples.
 
-You may edit and compile them from the jupyter notebook files *.ipynb* in the upper directory.
+You may edit and compile any kernel from the jupyter notebook files *.ipynb* in the upper directory.
 
-The files *clctypes.h* and *FGPUlib.c* are needed to be included in each kernel.
+The files *clctypes.h* and *FGPUlib.c* should be included in each kernel.
